@@ -1,0 +1,52 @@
+name: CI/CD
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check the JavaScript is valid
+        run: |
+          node -e "const s=require('fs').readFileSync('index.html','utf8'); require('fs').writeFileSync('/tmp/site.js', s.match(/<script>([\s\S]*?)<\/script>/)[1])"
+          node --check /tmp/site.js
+
+      - name: Build the Docker image and check it serves the site
+        run: |
+          docker build -t portfolio .
+          docker run -d -p 8080:80 portfolio
+          sleep 3
+          curl -fsS http://localhost:8080/ | grep -q "<title>"
+
+  deploy:
+    if: github.event_name == 'push'
+    needs: test
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Collect only the website files
+        run: |
+          mkdir -p dist/images
+          cp index.html dist/
+          cp -r images/. dist/images/
+          rm -f dist/images/README.txt
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+      - id: deployment
+        uses: actions/deploy-pages@v4
