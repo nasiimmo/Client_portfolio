@@ -1,8 +1,8 @@
 /* Everything you edit lives in this file: name, email, categories and projects. */
 
 /* ---------- SETTINGS: change these two lines ---------- */
-var NAME='Your Name';
-var EMAIL='hello@example.com';
+var NAME='Azzall';
+var EMAIL='azzall.ali3@gmail.com';
 /* ------------------------------------------------------ */
 
 /* ---------- project data: add new projects to this list ---------- */
@@ -25,5 +25,5 @@ var PROJECTS=[
  tint:'#F1E9DA',
  images:[],
  slides:[['The challenge','A repeatable device that moves, hits a wall and travels back to its starting position.'],['The specification','Finish within 3 minutes, spend no more than £50 and fit inside 400 x 400 x 400 mm.'],['No programming','Distance travelled had to be measured mechanically, using only mechanical principles.'],['The team','Designed and built together with Joe Goodsell and Keisi Cucaj.'],['The result','The team won the challenge.']]}
-];
-var CATS=['All','Mechanical','Mechatronics'];
+]
+var CATS=['All','Mechanical','Mechatronics']
