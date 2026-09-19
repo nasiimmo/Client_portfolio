@@ -1,0 +1,6 @@
+.git
+README.md
+portfolio-site
+Dockerfile
+compose.yaml
+.dockerignore
