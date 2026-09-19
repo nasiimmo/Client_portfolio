@@ -1,6 +1,6 @@
 .git
+.github
 README.md
-portfolio-site
-Dockerfile
 compose.yaml
+Dockerfile
 .dockerignore

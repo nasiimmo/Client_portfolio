@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Design Engineering portfolio</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<button class="skip" type="button" id="skip">Skip to content</button>
+
+<header class="site-header">
+  <div class="bar">
+    <a class="brand" href="#/" data-nav id="brand" aria-label="Home"><span class="brand-dot" aria-hidden="true"></span><span id="brand-name"></span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="#/work" data-nav>Work</a>
+      <a href="#/about" data-nav>About</a>
+      <a href="#/contact" data-nav>Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" tabindex="-1" style="outline:none">
+  <div id="home">
+    <section aria-labelledby="hero-title">
+      <div class="hero-inner">
+        <h1 class="hero-title" id="hero-title">Design engineering projects, all in one place.</h1>
+        <p class="lede">I'm a Design Engineering student at Middlesex University. This is a growing collection of my projects, added as I finish them.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="#/work" data-nav>View my work</a>
+          <a class="btn btn-ghost" href="#/contact" data-nav>Get in touch</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="work" aria-labelledby="work-title" style="padding-top:24px">
+      <h2 class="h2" id="work-title">Projects</h2>
+      <p class="section-intro">Search by title, tool or topic, or pick a category. Open a project to flick through its slides.</p>
+      <div class="finder">
+        <div class="search">
+          <label class="sr-only" for="q">Search projects</label>
+          <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+          <input id="q" type="search" placeholder="Search projects, e.g. Arduino or CAD" autocomplete="off" enterkeyhint="search">
+          <button class="clear" id="clear" type="button" aria-label="Clear search" hidden>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+          </button>
+        </div>
+        <div class="chips" id="chips" role="group" aria-label="Filter by category"></div>
+      </div>
+      <p class="status" id="status" aria-live="polite"></p>
+      <ul class="grid" id="grid"></ul>
+      <div class="empty" id="empty" hidden>
+        <p id="empty-text"></p>
+        <button class="btn btn-primary" id="reset" type="button">Clear search and filters</button>
+      </div>
+    </section>
+
+    <div class="about">
+      <section class="section" id="about" aria-labelledby="about-title">
+        <div>
+          <h2 class="h2" id="about-title">About</h2>
+          <p>I study Design Engineering at Middlesex University and start my final year in 2026. My projects so far range from purely mechanical builds to Arduino-controlled devices.</p>
+          <p>Teamwork, testing and adapting when things don't go to plan have been my biggest lessons. This site grows with every module, so the latest work is always in one place.</p>
+        </div>
+        <div class="sticker">
+          <h3>Skills and tools</h3>
+          <ul class="tags">
+            <li class="tag">Arduino</li><li class="tag">SolidWorks</li><li class="tag">Tinkercad</li><li class="tag">MATLAB</li><li class="tag">3D printing</li><li class="tag">Laser cutting</li><li class="tag">Workshop skills</li>
+          </ul>
+          <h3>Education</h3>
+          <p>Design Engineering, Middlesex University. Final year starts 2026.</p>
+        </div>
+      </section>
+    </div>
+
+    <div class="contact">
+      <section class="section" id="contact" aria-labelledby="contact-title">
+        <h2 class="h2" id="contact-title">Let's work together</h2>
+        <p>Looking for an intern, a collaborator or a team member for a project? Send me a message and I'll reply within a few days.</p>
+        <a class="btn btn-primary" id="email-link" href="#">Email me</a>
+      </section>
+      <div class="foot">&copy; <span id="foot-name"></span>.</div>
+    </div>
+  </div>
+
+  <div id="project" hidden></div>
+</main>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+<noscript><p style="padding:24px;text-align:center">This portfolio needs JavaScript to show projects.</p></noscript>
+</body>
+</html>

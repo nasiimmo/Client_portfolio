@@ -16,8 +16,8 @@ jobs:
 
       - name: Check the JavaScript is valid
         run: |
-          node -e "const s=require('fs').readFileSync('index.html','utf8'); require('fs').writeFileSync('/tmp/site.js', s.match(/<script>([\s\S]*?)<\/script>/)[1])"
-          node --check /tmp/site.js
+          node --check site/data.js
+          node --check site/app.js
 
       - name: Build the Docker image and check it serves the site
         run: |
@@ -25,6 +25,9 @@ jobs:
           docker run -d -p 8080:80 portfolio
           sleep 3
           curl -fsS http://localhost:8080/ | grep -q "<title>"
+          for f in style.css data.js app.js; do
+            curl -fsS -o /dev/null http://localhost:8080/$f
+          done
 
   deploy:
     if: github.event_name == 'push'
@@ -40,9 +43,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Collect only the website files
         run: |
-          mkdir -p dist/images
-          cp index.html dist/
-          cp -r images/. dist/images/
+          cp -r site dist
           rm -f dist/images/README.txt
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
