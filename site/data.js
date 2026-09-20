@@ -23,7 +23,7 @@ var PROJECTS=[
  did:['Worked in a team of three to design and build the device.','Kept to a £50 budget and a 400 mm cube size limit.','Measured distance travelled mechanically, with no programming.','Tested and adapted the design when things did not go to plan.'],
  outcome:'The team won the challenge. It was a great introduction to Design Engineering and showed the importance of teamwork, testing and adapting.',
  tint:'#F1E9DA',
- images:[],
+ images:['arv-image.jpeg'],
  slides:[['The challenge','A repeatable device that moves, hits a wall and travels back to its starting position.'],['The specification','Finish within 3 minutes, spend no more than £50 and fit inside 400 x 400 x 400 mm.'],['No programming','Distance travelled had to be measured mechanically, using only mechanical principles.'],['The team','Designed and built together with Joe Goodsell and Keisi Cucaj.'],['The result','The team won the challenge.']]}
 ]
 var CATS=['All','Mechanical','Mechatronics']
