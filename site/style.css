@@ -170,3 +170,13 @@ a{color:inherit}
 
 /* homepage cards: show the whole image instead of cropping it */
 .tile-art img{object-fit:contain;background:#F4F8F5}
+
+/* experience */
+.xp{list-style:none;margin:32px 0 0;padding:0;border-top:1px solid var(--line)}
+.xp-row{display:grid;grid-template-columns:200px minmax(0,1fr);gap:8px 40px;padding:26px 0;border-bottom:1px solid var(--line)}
+.xp-when{color:var(--muted);font-size:.95rem;font-weight:500;padding-top:3px}
+.xp-role{font-weight:600;font-size:1.15rem;letter-spacing:-.02em;margin:0}
+.xp-org{margin:2px 0 8px;font-weight:500}
+.xp-text{margin:0;color:var(--muted);max-width:40rem}
+@media (max-width:640px){.xp-row{grid-template-columns:1fr}.xp-when{padding-top:0}}
+@media (max-width:520px){.nav a{font-size:.92rem;padding:0 8px}}

@@ -167,7 +167,7 @@ function showHome(hash){
   view.hidden=true;view.innerHTML='';current=null;home.hidden=false;
   document.title=TITLE;
   var id=hash.replace(/^#\/?/,'');
-  var target=(id==='work'||id==='about'||id==='contact')?$(id):null;
+  var target=(id==='work'||id==='experience'||id==='about'||id==='contact')?$(id):null;
   requestAnimationFrame(function(){
     if(target)target.scrollIntoView({behavior:(wasProject||!smooth())?'auto':'smooth',block:'start'});
     else window.scrollTo(0,0);
@@ -184,6 +184,16 @@ document.addEventListener('click',function(e){
   if(a&&location.hash===a.getAttribute('href')){e.preventDefault();route()}
 });
 $('skip').addEventListener('click',function(){$('main').focus()});
+
+/* ---------- experience ---------- */
+(function(){
+  var list=(typeof EXPERIENCE!=='undefined')?EXPERIENCE:[];
+  var sec=$('experience');if(!sec||!list.length)return;
+  $('xp').innerHTML=list.map(function(x){
+    return '<li class="xp-row"><div class="xp-when">'+esc(x.dates)+'</div><div class="xp-what"><h3 class="xp-role">'+esc(x.role)+'</h3><p class="xp-org">'+esc(x.org)+'</p><p class="xp-text">'+esc(x.text)+'</p></div></li>';
+  }).join('');
+  sec.hidden=false;
+})();
 
 $('brand-name').textContent=NAME;$('foot-name').textContent=NAME;
 $('brand').setAttribute('aria-label',NAME+', home');

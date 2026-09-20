@@ -27,3 +27,15 @@ var PROJECTS=[
  slides:[['The challenge','A repeatable device that moves, hits a wall and travels back to its starting position.'],['The specification','Finish within 3 minutes, spend no more than £50 and fit inside 400 x 400 x 400 mm.'],['No programming','Distance travelled had to be measured mechanically, using only mechanical principles.'],['The team','Designed and built together with Joe Goodsell and Keisi Cucaj.'],['The result','The team won the challenge.']]}
 ]
 var CATS=['All','Mechanical','Mechatronics']
+
+/* ---------- experience: newest first ---------- */
+var EXPERIENCE=[
+{role:'Sales Associate',org:'Selfridges · Part-time · London',dates:'Oct 2024 to present',
+ text:'Advise clients on high-end handbag collections in a luxury retail setting, building product knowledge and lasting client relationships.'},
+{role:'Engineering Intern',org:'ADAMO ROBOT · Internship · Madrid, Spain',dates:'May 2025 to Jun 2025',
+ text:'Worked with engineers to improve a physiotherapy rehabilitation robot. Used anthropometric data to refine the ergonomic design and assessed the economic feasibility of design changes.'},
+{role:'Sales Assistant',org:'The Entertainer · London',dates:'Nov 2023 to Feb 2024',
+ text:'Helped customers with enquiries and product choices, kept displays and stock organised, and worked with the team on in-store displays and promotions.'},
+{role:'Private Equity Intern',org:'Permira · Internship',dates:'Sep 2022 to Sep 2023',
+ text:'Worked alongside industry specialists on financial analysis and due diligence for investment opportunities, and was invited to return to headquarters.'}
+];
