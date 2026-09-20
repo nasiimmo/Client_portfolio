@@ -39,3 +39,9 @@ var EXPERIENCE=[
 {role:'Private Equity Intern',org:'Permira · Internship',dates:'Sep 2022 to Sep 2023',
  text:'Worked alongside industry specialists on financial analysis and due diligence for investment opportunities, and was invited to return to headquarters.'}
 ];
+
+/* ---------- certifications: newest first (link is optional) ---------- */
+var CERTS=[
+{name:'Engineering internship',issuer:'The Intern Group',date:'May 2025',link:''},
+{name:'Simulink',issuer:'MathWorks',date:'Dec 2024',link:'https://matlabacademy.mathworks.com/progress/share/certificate.html?id=104f7226-5089-4f24-b309-7acb87b533e8'}
+];

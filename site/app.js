@@ -195,6 +195,17 @@ $('skip').addEventListener('click',function(){$('main').focus()});
   sec.hidden=false;
 })();
 
+/* ---------- certifications ---------- */
+(function(){
+  var list=(typeof CERTS!=='undefined')?CERTS:[];
+  var wrap=$('certs-wrap');if(!wrap||!list.length)return;
+  $('certs').innerHTML=list.map(function(c){
+    var link=c.link?'<a class="xp-link" href="'+esc(c.link)+'" target="_blank" rel="noopener">View certificate</a>':'';
+    return '<li class="xp-row"><div class="xp-when">'+esc(c.date)+'</div><div class="xp-what"><h4 class="xp-role">'+esc(c.name)+'</h4><p class="xp-org">'+esc(c.issuer)+link+'</p></div></li>';
+  }).join('');
+  wrap.hidden=false;$('experience').hidden=false;
+})();
+
 $('brand-name').textContent=NAME;$('foot-name').textContent=NAME;
 $('brand').setAttribute('aria-label',NAME+', home');
 $('email-link').setAttribute('href','mailto:'+EMAIL);

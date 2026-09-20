@@ -180,3 +180,9 @@ a{color:inherit}
 .xp-text{margin:0;color:var(--muted);max-width:40rem}
 @media (max-width:640px){.xp-row{grid-template-columns:1fr}.xp-when{padding-top:0}}
 @media (max-width:520px){.nav a{font-size:.92rem;padding:0 8px}}
+
+/* certifications */
+.xp-sub{font-weight:600;font-size:1.4rem;letter-spacing:-.02em;margin:56px 0 0}
+.xp-sub+.xp{margin-top:20px}
+.xp-link{margin-left:14px;font-weight:600;font-size:.95rem;color:var(--accent);text-decoration:none;white-space:nowrap}
+.xp-link:hover{text-decoration:underline}
