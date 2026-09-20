@@ -201,9 +201,28 @@ $('skip').addEventListener('click',function(){$('main').focus()});
   var wrap=$('certs-wrap');if(!wrap||!list.length)return;
   $('certs').innerHTML=list.map(function(c){
     var link=c.link?'<a class="xp-link" href="'+esc(c.link)+'" target="_blank" rel="noopener">View certificate</a>':'';
-    return '<li class="xp-row"><div class="xp-when">'+esc(c.date)+'</div><div class="xp-what"><h4 class="xp-role">'+esc(c.name)+'</h4><p class="xp-org">'+esc(c.issuer)+link+'</p></div></li>';
+    var imgs=c.images||[];
+    var thumbs=imgs.length?'<div class="xp-thumbs">'+imgs.map(function(f,k){
+      var src='images/'+encodeURI(f),alt=c.name+' certificate'+(imgs.length>1?' '+(k+1)+' of '+imgs.length:'');
+      return '<button class="xp-thumb" type="button" data-src="'+esc(src)+'" data-alt="'+esc(alt)+'" aria-label="View larger: '+esc(alt)+'"><img src="'+esc(src)+'" alt="" loading="lazy"></button>';
+    }).join('')+'</div>':'';
+    return '<li class="xp-row"><div class="xp-when">'+esc(c.date)+'</div><div class="xp-what"><h4 class="xp-role">'+esc(c.name)+'</h4><p class="xp-org">'+esc(c.issuer)+link+'</p>'+thumbs+'</div></li>';
   }).join('');
   wrap.hidden=false;$('experience').hidden=false;
+})();
+
+/* ---------- certificate viewer ---------- */
+(function(){
+  var lb=$('lb'),img=$('lb-img'),full=$('lb-full'),closeBtn=$('lb-close'),opener=null;
+  if(!lb)return;
+  function open(src,alt,from){img.src=src;img.alt=alt;full.href=src;lb.hidden=false;document.documentElement.classList.add('lb-open');opener=from;closeBtn.focus()}
+  function close(){lb.hidden=true;img.removeAttribute('src');document.documentElement.classList.remove('lb-open');if(opener){opener.focus();opener=null}}
+  document.addEventListener('click',function(e){
+    var t=e.target.closest('.xp-thumb');
+    if(t){open(t.getAttribute('data-src'),t.getAttribute('data-alt'),t);return}
+    if(!lb.hidden&&(e.target===lb||e.target.closest('#lb-close')))close();
+  });
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!lb.hidden)close()});
 })();
 
 $('brand-name').textContent=NAME;$('foot-name').textContent=NAME;

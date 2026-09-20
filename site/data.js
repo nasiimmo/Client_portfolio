@@ -42,6 +42,6 @@ var EXPERIENCE=[
 
 /* ---------- certifications: newest first (link is optional) ---------- */
 var CERTS=[
-{name:'Engineering internship',issuer:'The Intern Group',date:'May 2025',link:''},
-{name:'Simulink',issuer:'MathWorks',date:'Dec 2024',link:'https://matlabacademy.mathworks.com/progress/share/certificate.html?id=104f7226-5089-4f24-b309-7acb87b533e8'}
+{name:'Engineering internship',issuer:'The Intern Group',date:'May 2025',link:'',images:['cert-intern-group.jpg']},
+{name:'Simulink Onramp',issuer:'MathWorks',date:'Dec 2024',link:'',images:['cert-simulink.jpg']}
 ];
