@@ -7,8 +7,9 @@ var INK='#1E2F26';
 /* ---------- placeholder images (replace with real photos and screenshots) ---------- */
 function art(p,i,label){
   var t=esc(label||p.title);
-  if(p.images&&p.images[i]){
-    return '<img src="images/'+encodeURI(p.images[i])+'" alt="'+t+'" loading="lazy" decoding="async">';
+  var file=(!label&&p.cover)?p.cover:(p.images&&p.images[i]);
+  if(file){
+    return '<img src="images/'+encodeURI(file)+'" alt="'+t+'" loading="lazy" decoding="async">';
   }
   return '<svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="'+t+' (placeholder image)">'
     +'<rect width="800" height="600" fill="'+p.tint+'"/>'
@@ -86,11 +87,11 @@ function projectHTML(p,i){
     +'<div class="p-head"><span class="pill">'+p.cat+'</span>'
     +'<h1 class="p-title" id="p-title" tabindex="-1">'+esc(p.title)+'</h1><p class="p-summary">'+esc(p.summary)+'</p></div></div>'
     +'<section class="show" aria-roledescription="carousel" aria-label="'+esc(p.title)+' slides">'
-    +'<div class="stage" id="stage"><div class="track" id="track">'+slides+'</div>'
+    +'<div class="stage'+(p.portrait?' portrait':'')+'" id="stage"><div class="track" id="track">'+slides+'</div>'
     +'<button class="arrow prev" type="button" id="prev" aria-label="Previous slide">'+chevL+'</button>'
     +'<button class="arrow next" type="button" id="next" aria-label="Next slide">'+chevR+'</button></div>'
-    +'<div class="caption"><div aria-live="polite"><h2 class="cap-title" id="cap-title"></h2><p class="cap-text" id="cap-text"></p></div><span class="counter" id="counter"></span></div>'
-    +'<div class="thumbs" id="thumbs">'+thumbs+'</div></section>'
+    +'<div class="caption"><div aria-live="polite"><h2 class="cap-title" id="cap-title"></h2><p class="cap-text" id="cap-text"></p><a class="full" id="full" target="_blank" rel="noopener" hidden>Open full size</a></div><span class="counter" id="counter"></span></div>'
+    +'<div class="thumbs'+(p.portrait?' portrait':'')+'" id="thumbs">'+thumbs+'</div></section>'
     +'<div class="details"><div>'
     +'<section><h2>The brief</h2><p>'+esc(p.brief)+'</p></section>'
     +'<section><h2>The work</h2><ul class="did">'+p.did.map(function(d){return '<li>'+esc(d)+'</li>'}).join('')+'</ul></section>'
@@ -115,6 +116,8 @@ function go(n){
   Array.prototype.forEach.call(track.children,function(s,k){s.setAttribute('aria-hidden',String(k!==n))});
   $('cap-title').textContent=p.slides[n][0];
   $('cap-text').textContent=p.slides[n][1];
+  var full=$('full'),im=p.images&&p.images[n];
+  if(im){full.href='images/'+encodeURI(im);full.hidden=false}else{full.hidden=true}
   $('counter').textContent=(n+1)+' / '+len;
   var strip=$('thumbs');
   Array.prototype.forEach.call(strip.children,function(t,k){

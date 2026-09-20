@@ -1,4 +1,3 @@
-/* Everything you edit lives in this file: name, email, categories and projects. */
 
 /* ---------- SETTINGS: change these two lines ---------- */
 var NAME='Azzall';
@@ -14,8 +13,9 @@ var PROJECTS=[
  did:['Modelled the motor and the closed-loop control system in MATLAB.','Chose the motor, limit switch, push button and Arduino, and explained each choice.','Designed the wheels, chain-drop arm and base in CAD, then 3D printed and laser cut them.','Wired and programmed two encoder motors, a limit switch, LEDs and a buzzer.'],
  outcome:'The code and electronics worked on the bench, but on test day the motor could not lift the finished device, which weighed about 1200 g against a 600 g estimate. The project still earned a First, and the lesson was to test early and track weight from the start.',
  tint:'#E6F0E8',
- images:[], /* file names in the images folder, one per slide, in slide order. Example: ['01-challenge.jpg','02-control.jpg'] */
- slides:[['The challenge','Climb a pipe carrying a 2.2 m chain, hold at the top for 15 seconds, return, then drop the chain.'],['Control system','A closed-loop system: encoders and a limit switch feed position back to an Arduino.'],['Motor modelling','A MATLAB model showed the closed-loop response would be stable before anything was built.'],['CAD and build','3D printed wheels with rubber and O-rings, a printed chain-drop arm and a laser-cut MDF base.'],['Electronics','An Arduino Uno, two encoder motors, a limit switch, LEDs and a buzzer, powered by a 12V battery.'],['Test day','Everything worked on the bench. On the pipe, the finished device weighed about double the estimate.']]},
+ portrait:true,
+ images:['pipe-climber-01.jpg','pipe-climber-02.jpg','pipe-climber-03.jpg','pipe-climber-04.jpg','pipe-climber-05.jpg','pipe-climber-06.jpg','pipe-climber-07.jpg','pipe-climber-08.jpg','pipe-climber-09.jpg','pipe-climber-10.jpg','pipe-climber-11.jpg','pipe-climber-12.jpg','pipe-climber-13.jpg','pipe-climber-14.jpg','pipe-climber-15.jpg','pipe-climber-16.jpg','pipe-climber-17.jpg','pipe-climber-18.jpg','pipe-climber-19.jpg','pipe-climber-20.jpg','pipe-climber-21.jpg','pipe-climber-22.jpg'],
+ slides:[['Page 1',''],['Page 2',''],['Page 3',''],['Page 4',''],['Page 5',''],['Page 6',''],['Page 7',''],['Page 8',''],['Page 9',''],['Page 10',''],['Page 11',''],['Page 12',''],['Page 13',''],['Page 14',''],['Page 15',''],['Page 16',''],['Page 17',''],['Page 18',''],['Page 19',''],['Page 20',''],['Page 21',''],['Page 22','']]},
 {slug:'repeatable-vehicle',title:'IMechE Repeatable Vehicle',cat:'Mechanical',year:'Year 1',module:'IMechE Design Challenge',role:'Team member',team:'Joe Goodsell and Keisi Cucaj',
  tools:[],tags:['mechanical design','teamwork','testing'],
  summary:'A purely mechanical device that moves, hits a wall and returns to its start. Winner of the challenge.',
