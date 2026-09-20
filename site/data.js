@@ -42,6 +42,6 @@ var EXPERIENCE=[
 
 /* ---------- certifications: newest first (link is optional) ---------- */
 var CERTS=[
-{name:'Engineering internship',issuer:'The Intern Group',date:'May 2025',link:'',images:['cert-intern-group.jpg']},
-{name:'Simulink Onramp',issuer:'MathWorks',date:'Dec 2024',link:'',images:['cert-simulink.jpg']}
+{name:'Engineering internship',issuer:'The Intern Group',icon:'icon-intern-group.png',date:'May 2025',link:'',images:['cert-intern-group.jpg']},
+{name:'Simulink Onramp',issuer:'MathWorks',icon:'icon-mathworks.png',date:'Dec 2024',link:'',images:['cert-simulink.jpg']}
 ];

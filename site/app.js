@@ -202,11 +202,12 @@ $('skip').addEventListener('click',function(){$('main').focus()});
   $('certs').innerHTML=list.map(function(c){
     var link=c.link?'<a class="xp-link" href="'+esc(c.link)+'" target="_blank" rel="noopener">View certificate</a>':'';
     var imgs=c.images||[];
+    var icon=c.icon?'<img src="images/'+encodeURI(c.icon)+'" alt="" loading="lazy">':'';
     var thumbs=imgs.length?'<div class="xp-thumbs">'+imgs.map(function(f,k){
       var src='images/'+encodeURI(f),alt=c.name+' certificate'+(imgs.length>1?' '+(k+1)+' of '+imgs.length:'');
       return '<button class="xp-thumb" type="button" data-src="'+esc(src)+'" data-alt="'+esc(alt)+'" aria-label="View larger: '+esc(alt)+'"><img src="'+esc(src)+'" alt="" loading="lazy"></button>';
     }).join('')+'</div>':'';
-    return '<li class="xp-row"><div class="xp-when">'+esc(c.date)+'</div><div class="xp-what"><h4 class="xp-role">'+esc(c.name)+'</h4><p class="xp-org">'+esc(c.issuer)+link+'</p>'+thumbs+'</div></li>';
+    return '<li class="xp-row cert"><div class="xp-when">'+esc(c.date)+'</div><div class="xp-icon">'+icon+'</div><div class="xp-what"><h4 class="xp-role">'+esc(c.name)+'</h4><p class="xp-org">'+esc(c.issuer)+link+'</p>'+thumbs+'</div></li>';
   }).join('');
   wrap.hidden=false;$('experience').hidden=false;
 })();

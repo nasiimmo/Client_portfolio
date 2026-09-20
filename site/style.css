@@ -201,3 +201,9 @@ a{color:inherit}
 .lb-full{position:absolute;bottom:calc(20px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);color:#fff;font-weight:600;font-size:.95rem;white-space:nowrap}
 .lb-full:focus-visible{outline:2px solid #fff;outline-offset:3px}
 .lb-open{overflow:hidden}
+
+/* certification icons */
+.xp-row.cert{grid-template-columns:130px 56px minmax(0,1fr);gap:8px 24px}
+.xp-icon{width:56px;height:56px}
+.xp-icon img{display:block;width:56px;height:56px;object-fit:contain}
+@media (max-width:640px){.xp-row.cert{grid-template-columns:56px minmax(0,1fr);gap:8px 16px}.xp-row.cert .xp-when{grid-column:1/-1}}
